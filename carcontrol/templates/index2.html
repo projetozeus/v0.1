@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+
+<body>
+
+</body>
+</html>
+
+<h3>Ultimas  viagens</h3>
+
+{% for z in x %}
+	{{z.viagens_data}}<br>
+	{{z.viagens_condutor__condutor_nome}} :: <i> {{z.qtd}} viagens feitas</i>
+	{{z.viagens_kilometros}}
+	<br><br>
+{% endfor %}
+
+
+<h3>Viagens feitas por carro:</h3>
+{% for z in x %}
+	{{z.viagens_carro__carro_modelo}} <i>{{z.qtdCarro}} :: viagens</i> <br>
+{% endfor %}
+
+
+<h3>Total de KM</h3>
+
+<b>Km Total:</b><i>{{y.soma}}</i>
+<br><br>
+::: Media de KM por viagem: <i><b>{{y.media}}</b></i>:::
+<br><br>
+<b>Usuário Logado:</b> {{user}}

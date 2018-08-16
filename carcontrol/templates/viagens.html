@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+     <div class="content-inner">
+          <!-- Page Header-->
+          <header class="page-header">
+            <div class="container-fluid">
+              <h2 class="no-margin-bottom">Painel de Controle</h2>
+            </div>
+          </header>
+          <!-- Dashboard Counts Section-->
+          
+          <!-- Dashboard Header Section    -->
+          <section class="dashboard-header">
+            <div class="container-fluid">
+              <div class="row">
+                 <div class="col-lg-6">
+
+                                  <div class="card">
+                                    <div class="card-close">
+                                      <div class="dropdown">
+                                        <button type="button" id="closeCard3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-ellipsis-v"></i></button>
+                                        <div aria-labelledby="closeCard3" class="dropdown-menu dropdown-menu-right has-shadow"><a href="#" class="dropdown-item remove"> <i class="fa fa-times"></i>Close</a><a href="#" class="dropdown-item edit"> <i class="fa fa-gear"></i>Edit</a></div>
+                                      </div>
+                                    </div>
+                                    <div class="card-header d-flex align-items-center">
+                                      <h3 class="h4">Viaasdgens</h3>
+                                      <div class="row container-fluid">
+                                      <form>
+                                        <select class="form-control" style="float:right">
+                                          <option>Filtrar por:</option>
+                                          <option>Viagens</option>
+                                          <option>Carro</option>
+                                          <option>Condutor</option>
+                                        </select>
+                                      </form>
+                                      </div>
+                                    </div>
+                                    <div class="card-body">
+                                      <div class="table-responsive">                       
+                                        <table class="table table-striped table-hover">
+                                          <thead>
+                                            <tr>
+                                              <th>#</th>
+                                              <th>Carro</th>
+                                              <th>Condutor</th>
+                                              <th>Destino</th>
+                                              <th>Kilometragem</th>
+                                              <th>Data</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+
+                                            {% for z in x %}
+                                            <tr>
+                                              <th scope="row">{{z.id}}</th>
+                                              <td>{{z.viagens_carro__carro_modelo}}</td>
+                                              <td>{{z.viagens_condutor__condutor_nome}}</td>
+                                              <td>{{z.viagens_destino}}</td>
+                                              <td>{{z.viagens_kilometros}}</td>
+                                              <td>{{z.viagens_data}}</td>
+                                            </tr>
+                                            {% endfor %}
+                                        
+                                          </tbody>
+                                        </table>
+                                      </div>
+                                    </div>
+                                  </div>
+                 </div>
+              </div>
+            </div>
+          </section>
+      </div>    
+  {% endblock %}
