@@ -2,13 +2,7 @@
 {% load static %}
 {% block content %}
 
-     <div class="content-inner">
-          <!-- Page Header-->
-          <header class="page-header">
-            <div class="container-fluid">
-              <h2 class="no-margin-bottom">Painel de Controle</h2>
-            </div>
-          </header>
+ 
           <!-- Dashboard Counts Section-->
           
           <!-- Dashboard Header Section    -->
@@ -25,18 +19,30 @@
                                       </div>
                                     </div>
                                     <div class="card-header d-flex align-items-center">
-                                      <h3 class="h4">Viaasdgens</h3>
+
+                                     
+                                      <h3 class="h4">Viagens</h3>
                                       <div class="row container-fluid">
-                                      <form>
-                                        <select class="form-control" style="float:right">
-                                          <option>Filtrar por:</option>
-                                          <option>Viagens</option>
-                                          <option>Carro</option>
-                                          <option>Condutor</option>
+                                     
+
+                                       <form id="searchForm" method="post"  action="/carcontrol/busca" role="search" ccept-charset="utf-8">
+
+                                        {% csrf_token %}
+                                      
+                                        <select  style="float:right" id="tbl" class="form-control">
+                                          <option value="1">Viagens</option>
+                                          <option value="2">Condutor</option>
                                         </select>
+                                        
+
+                                         <input type="text" placeholder="What are you looking for..." name="vlr" class="form-control" id="vlr">
+
                                       </form>
+                                      
                                       </div>
+
                                     </div>
+                                    <div id="resultado"></div>
                                     <div class="card-body">
                                       <div class="table-responsive">                       
                                         <table class="table table-striped table-hover">
@@ -65,6 +71,7 @@
                                         
                                           </tbody>
                                         </table>
+
                                       </div>
                                     </div>
                                   </div>

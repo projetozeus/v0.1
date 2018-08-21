@@ -32,13 +32,7 @@
       <!-- Main Navbar-->
       <header class="header">
         <nav class="navbar">
-          <!-- Search Box-->
-          <div class="search-box">
-            <button class="dismiss"><i class="icon-close"></i></button>
-            <form id="searchForm" action="#" role="search">
-              <input type="search" placeholder="What are you looking for..." class="form-control">
-            </form>
-          </div>
+
           <div class="container-fluid">
             <div class="navbar-holder d-flex align-items-center justify-content-between">
               <!-- Navbar Header-->
@@ -132,12 +126,22 @@
                       <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
                         <li><a href="{% url 'viagens' %}">Viagens</a></li>
                         <li><a href="{% url 'condutores' %}">Condutores</a></li>
-                        <li><a href="{% url 'carros' %}">Carros</a></li>
+                        <li><a href="javascript:ola();">Carros</a></li>
                       </ul>
                     </li>
                    
           </ul>
         </nav>
+
+               <div class="content-inner">
+          <!-- Page Header-->
+          <header class="page-header">
+            <div class="container-fluid">
+              <h2 class="no-margin-bottom">Painel de Controle</h2>
+            </div>
+          </header>
+
+    
 
         {% block content %}
         
@@ -170,5 +174,23 @@
         <script src="{% static 'js/charts-custom.js' %}"></script>
         <!-- Main File-->
         <script src="{% static 'js/front.js' %}"></script>
+
+        <script type="text/javascript">
+        $("form").submit(function(event){
+          event.preventDefault();
+             $.ajax({
+              type: "post",
+              url: "/carcontrol/busca/",
+              data: { 
+                vlr: $("#vlr").val(),
+                tbl:  $("#tbl").val(),
+                csrfmiddlewaretoken: '{{ csrf_token }}'
+              },
+              success: function(data){
+                  $(".table-responsive").html("<strong>"+data+"</strong>");                
+              }
+          });
+        });
+        </script>
   </body>
 </html>

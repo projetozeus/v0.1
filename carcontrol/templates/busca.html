@@ -1,0 +1,27 @@
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Carro</th>
+                <th>Condutor</th>
+                <th>Destino</th>
+                <th>Kilometragem</th>
+                <th>Data</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for z in viagens %}
+            <tr>
+                <th scope="row">{{z.id}}</th>
+                    <td>{{z.viagens_carro__carro_modelo}}</td>
+                    <td>{{z.viagens_condutor__condutor_nome}}</td>
+                    <td>{{z.viagens_destino}}</td>
+                    <td>{{z.viagens_kilometros}}</td>
+                    <td>{{z.viagens_data}}</td>
+            </tr>
+        {% endfor %}                                      
+        </tbody>
+    </table>
+
+                      
+    
