@@ -1,8 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-
-
         <div class="content-inner">
           <!-- Page Header-->
           <header class="page-header">
@@ -11,7 +9,7 @@
             </div>
           </header>
           <!-- Dashboard Counts Section-->
-          
+
           <!-- Dashboard Header Section    -->
           <section class="dashboard-header">
             <div class="container-fluid">
@@ -33,13 +31,13 @@
                     <div class="text"><strong>147</strong><br><small>Forwards</small></div>
                   </div>
                    -->
-                  {% endfor %} 
+                  {% endfor %}
                 </div>
                 <!-- Line Chart            -->
                           <section class="updates no-padding-top">
               <div class="container-fluid">
               <div class="row">
-             
+
                    <!-- Recent Updates-->
                   <div class="col-lg-12">
                   <div class="card">
@@ -53,7 +51,7 @@
                       <h3 class="h4">Viagens</h3>
                     </div>
                     <div class="card-body">
-                      <div class="table-responsive">  
+                      <div class="table-responsive">
                         <table class="table table-striped">
                           <thead>
                             <tr>
@@ -65,7 +63,7 @@
                             </tr>
                           </thead>
                           <tbody>
-                          
+
                             {% for z in x %}
                             <tr>
                               <th scope="row">{{z.id}}</th>
@@ -85,7 +83,7 @@
               </div>
             </div>
           </section>
-       
+
               </div>
             </div>
           </section
@@ -103,8 +101,8 @@
           <section class="feeds no-padding-top">
             <div class="container-fluid">
               <div class="row">
- 
-              
+
+
               </div>
             </div>
           </section>
@@ -113,13 +111,13 @@
             <div class="container-fluid">
               <div class="row">
                 <!-- Recent Updates-->
-              
+
                  <!-- Daily Feeds -->
 
                 <!-- Recent Activities -->
-               
+
               </div>
             </div>
           </section>
-         
+
   {% endblock %}

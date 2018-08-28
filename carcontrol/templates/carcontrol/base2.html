@@ -187,7 +187,7 @@
                 csrfmiddlewaretoken: '{{ csrf_token }}'
               },
               success: function(data){
-                  $(".table-responsive").html("<strong>"+data+"</strong>");                
+                  $("#resultado").html("<strong>"+data+"</strong>");                
               }
           });
         });
