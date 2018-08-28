@@ -126,15 +126,15 @@
           <em class="fa fa-navicon">&nbsp;</em> Carros <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
           </a>
           <ul class="children collapse" id="sub-item-1">
-            <li><a class="" href="#">
+            <li><a class="" href="{% url 'condutores' %}">
               <span class="fa fa-arrow-right">&nbsp;</span> Condutores
               </a>
             </li>
-            <li><a class="" href="#">
+            <li><a class="" href="{% url 'viagens' %}">
               <span class="fa fa-arrow-right">&nbsp;</span> Viagens
               </a>
             </li>
-            <li><a class="" href="#">
+            <li><a class="" href="{% url 'carros' %}">
               <span class="fa fa-arrow-right">&nbsp;</span> Carros
               </a>
             </li>
@@ -156,7 +156,7 @@
         </ol>
       </div>
       <!--/.row-->
-     
+
       <!--/.row titulo do painel -->
       {% block content %} {% endblock %}
     </div>
@@ -175,13 +175,13 @@
            $.ajax({
             type: "post",
             url: "/carcontrol/busca/",
-            data: { 
+            data: {
               vlr: $("#vlr").val(),
               tbl:  $("#tbl").val(),
               csrfmiddlewaretoken: '{{ csrf_token }}'
             },
             success: function(data){
-                $("#resultado").html("<strong>"+data+"</strong>");                
+                $("#resultado").html("<strong>"+data+"</strong>");
             }
         });
       });
@@ -190,12 +190,12 @@
     {% block jquery %}
     <script type="text/javascript">
       $.ajax({
-      
+
                  type: "get",
                  url: "/carcontrol/chart/",
-             
+
                  success: function(data){
-      
+
                    var defaultLabels = data.nomes;
                    var defaultData = data.valores;
 
@@ -236,11 +236,11 @@
       	        }
       	    }
       	});
-      
+
                  }
              });
-       
+
     </script>
-    {% endblock %}   
+    {% endblock %}
   </body>
 </html>
