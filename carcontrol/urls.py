@@ -9,4 +9,5 @@ urlpatterns = [
     path('carros/', views.carros, name='carros'),
     path('busca/', views.busca, name='busca'),
     path('chart/', views.chart, name='chart'),
+    path('<int:viagens_id>/deleta/', views.deleta, name='deleta'),
 ]

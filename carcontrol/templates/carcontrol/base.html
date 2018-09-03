@@ -187,10 +187,9 @@
       });
     </script>
     <!-- REQUISICAO AJAX PARA POPULAR O GRAFICO ( chart.js ) RECEBE UM JSON CONTENDO 2 ARRAYS (NOME E VALORES) DA VIEW /USUARIO/CHART -->
-    {% block jquery %}
+
     <script type="text/javascript">
       $.ajax({
-
                  type: "get",
                  url: "/carcontrol/chart/",
 
@@ -241,6 +240,6 @@
              });
 
     </script>
-    {% endblock %}
+
   </body>
 </html>

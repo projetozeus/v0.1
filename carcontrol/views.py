@@ -4,12 +4,12 @@ from . import views
 from .models import Condutores, Viagens, Carro
 from django.db.models import Count,Sum,Avg
 from django.contrib.auth.decorators import login_required
-from django_ajax.decorators import ajax
 from django.db.models import Q
 from django.views.generic import TemplateView
 import json
 from django.http import JsonResponse
 from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_protect
 
 @login_required
 def cc_index(request):
@@ -78,7 +78,7 @@ def carros(request):
 
 	return render(request, 'carcontrol/carros.html', context)
 
-
+@csrf_protect
 def busca(request):
 
 	if request.method == 'POST':
@@ -147,3 +147,7 @@ def chart(request):
 	}
 
 	return JsonResponse(context)
+
+def deleta(request,tbl,vlr):
+
+	return render(request, 'carcontrol/viagens.html', context)

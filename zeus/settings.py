@@ -28,6 +28,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'reservas.apps.ReservasConfig',
     'usuarios.apps.UsuariosConfig',
     'carcontrol.apps.CarcontrolConfig',
     'django.contrib.admin',
@@ -76,12 +77,13 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'zeus',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': '127.0.0.1',
+        'USER': 'paraiso',
+        'PASSWORD': '123456',
+        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
         'PORT': '3306',
     }
 }
+
 
 
 # Password validation

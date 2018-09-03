@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+{% for z in x %}
+<a href="{% url 'pacote' z.id %}">
+  <div  style="color:#fff; background-color:red; width:300px;float:left">
+      <h3>{{ z.nome_pacote }}</h3>
+      <p>{{ z.desc_pacote }}</p>
+      <span>R$ {{ z.valor_pacote }}</span>
+  </div>
+</a>
+{% endfor %}
+
+
+  </body>
+</html>
